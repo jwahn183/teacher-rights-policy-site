@@ -95,7 +95,7 @@ function recurrencePage(){return `${title('지원은, 종결 이후에도 이어
   <div class="grid-2 section"><section class="card"><div class="card-top"><h2>사후관리 점검표</h2><span class="badge blue" id="followup-count">${state.followupChecks.length} / 6</span></div>${checks('followupChecks',POLICY.followupChecks,state.followupChecks)}<div class="actions">${action('점검 결과 내려받기','download-followup','','secondary')}</div></section><section class="card"><span class="eyebrow">RECONNECT</span><h2>재발하면, 기관이 다시 대응합니다.</h2><p class="subtle" style="margin-top:12px">반복 민원은 학교·교육지원청 공식 창구로 연결하고, 기존 사건의 기록을 다음 위험도 평가에 반영합니다.</p><div id="recurrence-scenario" style="margin-top:22px">${recurrenceScenario()}</div></section></div>`;}
 function recurrenceScenario(){return state.recurrenceDetected?`<div class="notice danger"><strong style="color:inherit">가상 재발 상황 · 강화 대응 경로</strong><p style="margin-top:5px">실제 보고·분리·기관 연계가 실행된 것은 아닙니다.</p></div>${list(['교육지원청에 재발 사실 보고','교원 안전 확인과 관련자 분리 등 보호조치 검토','법률·심리 전문가와 교육활동보호센터 연계','학교·교육지원청의 민원 직접 대응','사건 기록 갱신 후 위험도 재평가'])}<div class="actions">${action('체험 초기화','reset-recurrence','','secondary')}</div>`:`<div class="org-line"><span>위험도 평가</span>→<span>맞춤형 관리</span>→<span>재발 대응</span>↺</div>${action(icon('refresh')+' 재발 상황 체험','simulate-recurrence','','danger')}`;}
 
-function statsContent(){return `<div class="notice warn">모든 수치는 <strong>가상의 정책 평가 예시</strong>입니다. 실제 성과나 현재 화면의 체험 사안을 집계한 수치가 아닙니다.</div><div class="metrics">${[['초기 대응시간','2.4시간','신고 후 첫 보호·안내까지'],['전담인력 배정률','90%','지원 대상 중 담당자 지정'],['분야별 지원 연계율','88%','법률·심리·행정 중 필요한 지원 연결'],['보호 체감도','4.2 / 5','피해 교원 설문 평균'],['학교복귀 완료율','81%','지원 대상 중 복귀 완료'],['재침해 발생률','6%','사후관리 대상 중 재발']].map(([n,v,d])=>`<div class="metric"><span>${n}</span><strong>${v}</strong><small>${d} · 예시</small></div>`).join('')}</div><div class="grid-2"><section class="card"><div class="card-top"><h2>심각도별 관리 사건</h2>${badge('가상 128건')}</div><div class="bar-chart">${[61,44,23].map((v,i)=>`<div class="bar-row"><span>${i+1}단계</span><div class="bar-track" aria-hidden="true"><span style="width:${v/61*100}%"></span></div><strong>${v}건</strong></div>`).join('')}</div></section><section class="card"><div class="card-top"><h2>학교복귀 완료율 추이</h2>${badge('가상 예시')}</div><svg class="chart-svg" viewBox="0 0 470 180" role="img" aria-label="가상 학교복귀 완료율: 1월 62%, 2월 66%, 3월 71%, 4월 74%, 5월 79%, 6월 81%"><path d="M32 18H446 M32 64H446 M32 110H446" stroke="#e3e9f1" fill="none"/>${[62,66,71,74,79,81].map((v,i)=>`<text x="${35+i*80}" y="166" text-anchor="middle">${i+1}월</text><text x="${35+i*80}" y="${140-(v-60)*5-14}" text-anchor="middle">${v}%</text>`).join('')}<polyline points="${[62,66,71,74,79,81].map((v,i)=>`${35+i*80},${140-(v-60)*5}`).join(' ')}" fill="none" stroke="#12654e" stroke-width="3"/>${[62,66,71,74,79,81].map((v,i)=>`<circle cx="${35+i*80}" cy="${140-(v-60)*5}" r="4" fill="#12654e"/>`).join('')}</svg></section></div><section class="card section"><h2>성과는 무엇으로 확인하나요?</h2>${list(['신고 후 초기 대응까지 걸린 시간','전담인력 배정 여부와 분야별 지원 연계율','피해 교원의 보호 체감도와 학교생활 안정도','복귀 이후 관리의 지속성과 재침해 발생 여부'])}</section>`;}
+function statsContent(){return `<div class="notice warn">모든 수치는 <strong>가상의 정책 평가 예시</strong>입니다. 실제 성과나 현재 화면의 체험 사안을 집계한 수치가 아닙니다.</div><div class="metrics">${[['초기 대응시간','2.4시간','신고 후 첫 보호·안내까지'],['전담인력 배정률','90%','지원 대상 중 담당자 지정'],['분야별 지원 연계율','88%','법률·심리·행정 중 필요한 지원 연결'],['보호 체감도','4.2 / 5','피해 교원 설문 평균'],['학교복귀 완료율','81%','지원 대상 중 복귀 완료'],['재침해 발생률','6%','사후관리 대상 중 재발']].map(([n,v,d])=>`<div class="metric"><span>${n}</span><strong>${v}</strong><small>${d} · 예시</small></div>`).join('')}</div><div class="grid-2"><section class="card"><div class="card-top"><h2>심각도별 관리 사건</h2>${badge('가상 128건')}</div><div class="bar-chart">${[61,44,23].map((v,i)=>`<div class="bar-row"><span>${i+1}단계</span><div class="bar-track" aria-hidden="true"><span style="width:${v/61*100}%"></span></div><strong>${v}건</strong></div>`).join('')}</div></section><section class="card"><div class="card-top"><h2>학교복귀 완료율 추이</h2>${badge('가상 예시')}</div><svg class="chart-svg" viewBox="0 0 470 180" role="img" aria-label="가상 학교복귀 완료율: 1월 62%, 2월 66%, 3월 71%, 4월 74%, 5월 79%, 6월 81%"><path d="M32 18H446 M32 64H446 M32 110H446" stroke="#e3e9f1" fill="none"/>${[62,66,71,74,79,81].map((v,i)=>`<text x="${35+i*80}" y="166" text-anchor="middle">${i+1}월</text><text x="${35+i*80}" y="${140-(v-60)*5-14}" text-anchor="middle">${v}%</text>`).join('')}<polyline points="${[62,66,71,74,79,81].map((v,i)=>`${35+i*80},${140-(v-60)*5}`).join(' ')}" fill="none" stroke="var(--blue)" stroke-width="3"/>${[62,66,71,74,79,81].map((v,i)=>`<circle cx="${35+i*80}" cy="${140-(v-60)*5}" r="4" fill="var(--blue)"/>`).join('')}</svg></section></div><section class="card section"><h2>성과는 무엇으로 확인하나요?</h2>${list(['신고 후 초기 대응까지 걸린 시간','전담인력 배정 여부와 분야별 지원 연계율','피해 교원의 보호 체감도와 학교생활 안정도','복귀 이후 관리의 지속성과 재침해 발생 여부'])}</section>`;}
 function policyOverview(){return `<section class="card"><span class="eyebrow">POLICY VISION</span><p class="quote">교권침해 발생 이전부터 회복·복귀 이후까지,<br>하나로 연결된 예방적·통합적 교권보호체계.</p><p class="subtle" style="margin-top:20px">교육정책 5팀 보고서가 제안한 정책을 교원 중심의 서비스 흐름으로 구성했습니다. 아래 비교는 보고서의 문제의식과 개선 방향이며, 모든 현행 제도를 동일하게 평가하는 설명은 아닙니다.</p></section><div class="grid-3 section">${[['개입 시점','사후 대응 중심의 공백','예방교육·위험징후 인식·초기 보호까지 연결'],['지원 접근성','기관 탐색과 신청의 부담','공식 판단 전 필요한 상담·보호부터 연결'],['지원의 연속성','심의·상담·비용 지원의 분절','같은 사건번호로 복귀·재발방지까지 관리']].map(([t,a,b])=>`<article class="card"><span class="eyebrow">${t}</span><p class="subtle">보고서가 지적한 과제</p><h3 style="margin:8px 0 20px">${a}</h3><p style="color:var(--blue)">${icon('arrow')} ${b}</p></article>`).join('')}</div><section class="card section"><h2>누가, 어떻게 실행하나요?</h2><div class="table-wrap" style="margin-top:20px"><table><thead><tr><th scope="col">주체</th><th scope="col">제안 역할</th></tr></thead><tbody><tr><th scope="row">교육부·시도교육청</th><td>정책 기준·인력·예산 확보와 평가 체계 마련</td></tr><tr><th scope="row">교육지원청·학교</th><td>안전 확보, 공식 민원 대응, 복귀 환경 조율</td></tr><tr><th scope="row">케이스매니저·전문가</th><td>사건번호 기반의 법률·심리·행정 협업과 사후관리</td></tr><tr><th scope="row">피해 교원</th><td>필요 지원과 복귀 조건 선택, 속도 조정·지원 재개 요청</td></tr></tbody></table></div></section><section class="section"><div class="section-head"><h2>정책이 기대하는 변화</h2>${badge('기대효과 · 향후 검증','blue')}</div><div class="grid-3">${[['업무 부담 감소','반복 설명·기관 탐색·서류 준비를 줄이고, 학교와 케이스매니저가 대응을 함께 맡는 구조를 목표로 합니다.'],['회복과 복귀의 연속성','사건 종결에서 지원을 끊지 않고 복귀 전 준비와 복귀 후 사후관리까지 연결하는 것을 목표로 합니다.'],['교원 이탈 예방','스트레스·업무 부담, 학교생활 안정도와 신규·현직 교원의 중도이탈 지표를 통해 장기 효과를 검증합니다.']].map(([h,d])=>`<article class="card"><span class="eyebrow">EXPECTED IMPACT</span><h3 style="margin:10px 0">${h}</h3><p class="subtle">${d}</p></article>`).join('')}</div></section><section class="card section"><h2>공식 정책과 제안 정책을 구분합니다</h2><p class="subtle" style="margin-top:10px">1395 상담 안내와 공식 법령은 아래 원문에서 확인할 수 있습니다. 3단계 차등지원, 동일 사건번호·케이스매니저 연속관리, 복귀·사후관리 기간은 본 보고서의 제안 설계입니다.</p><div class="source-list">${sourceLinks()}</div></section>`;}
 function sourceLinks(){return POLICY.sources.map(s=>`<a href="${escapeHTML(s.url)}" target="_blank" rel="noopener noreferrer"><span>${s.title}<small>${s.org}</small></span>${icon('external')}</a>`).join('');}
 function reportContent(){return `<section class="card"><div class="report-heading"><div><span class="eyebrow">REPORT / 교육정책 5팀</span><h2>제도가 있어도, 지원이 닿지 않는 이유</h2></div>${badge('보고서 근거')}</div><p class="subtle">보고서는 기존 교권보호제도의 실효성과 통합성 부족을 핵심 문제로 보고, 교원이 경험하는 과정을 기준으로 지원체계를 다시 연결합니다.</p><div class="report-stats">${[['4,234','지역교권보호위원회 개최 건수','2024학년도 · 전국'],['32.4%','학생 침해 중 생활지도 불응·방해','2024학년도 · 학생에 의한 침해'],['24.4%','보호자 등의 반복·부당 간섭','2024학년도 · 보호자 등에 의한 침해']].map(([v,t,n])=>`<div class="report-stat"><strong>${v}</strong><span>${t}</span><small>${n}</small></div>`).join('')}</div><p class="report-source">교육부 발표 · 2025.05.13. <a href="https://www.korea.kr/news/policyNewsView.do?newsId=148943122" target="_blank" rel="noopener noreferrer">2024학년도 교육활동 침해 실태조사 원문 ↗</a><br>위원회 개최 건수와 유형별 비중은 서로 다른 지표이며, 접수되지 않은 모든 피해 경험을 나타내지는 않습니다.</p></section>
@@ -113,7 +113,26 @@ function resourcesPage(){return `${title('필요한 자료와 공식 지원 경�
 
 // ===== T-Care motion & interaction layer =====
 let revealObserver=null;
+const countFrames=new Set();
 const motionReduced=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function animateCount(node){
+  const final=node.dataset.countFinal;
+  const match=final.match(/^([\d,]+(?:\.\d+)?)(.*)$/);
+  if(!match||motionReduced()||typeof requestAnimationFrame!=='function')return;
+  const value=Number(match[1].replaceAll(',',''));
+  const decimals=(match[1].split('.')[1]||'').length;
+  const format=new Intl.NumberFormat('en-US',{minimumFractionDigits:decimals,maximumFractionDigits:decimals,useGrouping:match[1].includes(',')});
+  let start;
+  const queue=()=>{const id=requestAnimationFrame(time=>{countFrames.delete(id);tick(time);});countFrames.add(id);};
+  const tick=time=>{
+    if(!node.isConnected)return;
+    start??=time;
+    const progress=motionReduced()?1:Math.min((time-start)/1300,1);
+    node.textContent=progress===1?final:format.format(Math.floor(value*(1-Math.pow(1-progress,3))*10**decimals)/10**decimals)+match[2];
+    if(progress<1)queue();
+  };
+  queue();
+}
 function flashSwap(node){if(!node)return;node.classList.remove('swap-flash');void node.offsetWidth;node.classList.add('swap-flash');}
 function updateScrollProgress(){
   const bar=$('#scroll-progress-bar');if(!bar)return;
@@ -131,16 +150,21 @@ function updateJourneyProgress(){
   journey.style.setProperty('--journey-progress',`${((Math.max(active,0)+1)/5)*100}%`);
 }
 function enhancePage(){
+  countFrames.forEach(id=>cancelAnimationFrame(id));countFrames.clear();
   document.documentElement.classList.add('motion-ready');
   const main=$('#main');if(!main)return;
   main.classList.remove('page-enter');void main.offsetWidth;main.classList.add('page-enter');
   const hoverables=main.querySelectorAll('.grid-2 > .card,.grid-3 > .card,.bottom-grid > .card,.two-column .case-summary');hoverables.forEach(el=>el.classList.add('interactive-card'));
-  const candidates=[...main.children,...main.querySelectorAll('.grid-2 > *, .grid-3 > *, .support-shortcuts > *, .metrics > *')];
+  const numbers=[...main.querySelectorAll('.report-stat strong, .metric strong, .bar-row strong, .chart-svg text')].filter(el=>/^\d[\d,.]*(?:%|시간|건| \/ 5)?$/.test(el.textContent));
+  numbers.forEach(el=>{el.dataset.countFinal=el.textContent;el.setAttribute('aria-label',el.textContent);});
+  const headings=[...main.querySelectorAll('h1, h2, .quote, .hero > p')];
+  headings.forEach(el=>el.classList.add('text-rise'));
+  const candidates=[...main.children,...main.querySelectorAll('.grid-2 > *, .grid-3 > *, .support-shortcuts > *, .metrics > *'),...headings,...numbers];
   const targets=[...new Set(candidates)].filter(el=>!el.hidden);
   if(revealObserver)revealObserver.disconnect();
   if(motionReduced()||!('IntersectionObserver' in window)){targets.forEach(el=>el.classList.add('reveal','is-visible'));}
   else{
-    revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');revealObserver.unobserve(entry.target);}}),{threshold:.08,rootMargin:'0px 0px -4%'});
+    revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');if(entry.target.dataset.countFinal)animateCount(entry.target);revealObserver.unobserve(entry.target);}}),{threshold:.08,rootMargin:'0px 0px -4%'});
     targets.forEach((el,i)=>{el.classList.add('reveal');el.style.setProperty('--reveal-delay',`${Math.min(i,8)*35}ms`);revealObserver.observe(el);});
   }
   animateCharts();updateJourneyProgress();updateScrollProgress();
