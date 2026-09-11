@@ -1,0 +1,14 @@
+{
+  "name": "gyogwon-on",
+  "version": "1.0.0",
+  "private": true,
+  "description": "T-Care 교원 통합지원 정책 체험 홈페이지",
+  "scripts": {
+    "dev": "node scripts/serve.cjs",
+    "build": "node scripts/build.cjs",
+    "test": "node --test --test-isolation=none tests/site.test.cjs"
+  },
+  "devDependencies": {
+    "jsdom": "^30.0.1"
+  }
+}

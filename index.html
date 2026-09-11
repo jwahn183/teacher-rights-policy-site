@@ -3,62 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#164b82">
-  <meta name="description" content="교원의 교육활동 보호를 위한 절차, 상담, 서식과 지원기관 정보를 안내합니다.">
-  <title>교원안심지원 | 교육활동 보호 지원</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="T-Care (Teacher Care) — 사전예방부터 법률·심리·행정지원, 학교복귀와 재발방지까지. 교육정책 5팀의 교원 통합지원 정책 체험 홈페이지.">
+  <title>T-Care | 선생님의 일상에, 안심을 더하다</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/policy-data.js" defer></script>
+  <script src="assets/app.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">본문 바로가기</a>
-  <div class="utility-bar"><div class="wrap utility-inner"><span>교원의 교육활동 보호를 위한 안내 서비스</span><div><a href="#notice">공지사항</a><a href="#contact">담당기관 찾기</a><button type="button" id="font-up">글자 크게</button></div></div></div>
-  <header class="site-header">
-    <div class="wrap header-main">
-      <a class="logo" href="#top" aria-label="교원안심지원 홈"><span class="logo-mark">교</span><span><strong>교원안심지원</strong><small>교육활동 보호 통합안내</small></span></a>
-      <button class="menu-button" type="button" aria-expanded="false" aria-label="전체 메뉴 열기">☰</button>
-      <nav class="main-nav" aria-label="주요 메뉴"><a href="#quick">지원안내</a><a href="#cycle">보호 사이클</a><a href="#severity">피해등급</a><a href="#resources">자료·서식</a><a href="#contact">상담기관</a></nav>
-      <button class="all-menu" type="button" aria-label="전체 메뉴 열기">전체메뉴 <span>☰</span></button>
-    </div>
-  </header>
-  <main id="main">
-    <section class="intro" id="top"><div class="wrap intro-grid">
-      <div class="intro-copy"><p class="kicker">교육활동 침해, 혼자 대응하지 마세요</p><h1>필요한 보호와 지원을<br>빠르게 확인하세요.</h1><p>사안별 대응 절차부터 법률·심리 상담, 치료비 지원과 관련 서식까지 한곳에서 안내합니다.</p>
-        <form class="site-search" id="site-search" role="search"><label class="sr-only" for="search-input">통합검색</label><input id="search-input" type="search" placeholder="찾으시는 지원이나 자료를 입력하세요" autocomplete="off"><button type="submit">검색</button></form>
-        <div class="keywords"><span>자주 찾는 검색어</span><button type="button">교권보호위원회</button><button type="button">법률상담</button><button type="button">치료비</button></div>
-      </div>
-      <aside class="urgent-box" aria-labelledby="urgent-title"><span class="urgent-label">긴급상황 안내</span><h2 id="urgent-title">지금 안전이 위협받고 있나요?</h2><p>폭행·협박 등 즉시 보호가 필요한 경우 관리자에게 알리고, 위험한 상황에서는 112에 신고하세요.</p><div class="urgent-links"><a href="tel:112"><strong>112</strong><span>긴급 신고</span></a><a href="#contact"><strong>1395</strong><span>교권침해 직통번호</span></a></div><button class="text-button" type="button" data-dialog="emergency">긴급 사안 대응 순서 보기 →</button></aside>
-    </div></section>
-    <section class="quick-section" id="quick" aria-labelledby="quick-title"><div class="wrap"><div class="section-title"><div><span>QUICK SERVICE</span><h2 id="quick-title">자주 찾는 서비스</h2></div><p>현재 상황에 필요한 안내를 바로 확인할 수 있습니다.</p></div><div class="quick-menu">
-      <button type="button" data-dialog="check"><i>01</i><strong>내 상황 확인하기</strong><span>사안 유형별 대응 안내</span></button><a href="#process"><i>02</i><strong>사안처리 절차</strong><span>신고부터 조치까지</span></a><button type="button" data-dialog="legal"><i>03</i><strong>법률상담 안내</strong><span>상담·소송 지원</span></button><button type="button" data-dialog="care"><i>04</i><strong>심리·치료 지원</strong><span>상담 및 치료비 안내</span></button><a href="#resources"><i>05</i><strong>서식 내려받기</strong><span>신고서·의견서 등</span></a><a href="#contact"><i>06</i><strong>지역 지원기관</strong><span>교육청별 연락처</span></a>
-    </div></div></section>
-    <section class="content-section" id="notice"><div class="wrap board-grid"><div class="board"><div class="board-head"><div class="tabs" role="tablist"><button class="active" data-tab="notice" role="tab" aria-selected="true">공지사항</button><button data-tab="policy" role="tab" aria-selected="false">정책·제도</button><button data-tab="training" role="tab" aria-selected="false">연수안내</button></div><a href="#">더보기 +</a></div><div class="board-list" id="board-list"></div></div><aside class="center-card"><span>교원 보호 상담</span><h2>교육활동보호센터</h2><p>사안 접수, 법률·심리 상담과 지역별 지원기관을 안내합니다.</p><strong>1395</strong><small>평일 09:00~18:00</small><a href="#contact">상담기관 자세히 보기</a></aside></div></section>
-    <section class="cycle-section" id="cycle"><div class="wrap">
-      <div class="section-title"><div><span>CONTINUOUS SUPPORT</span><h2>교육활동 보호 5단계 사이클</h2></div><p>예방부터 재발방지까지 하나의 사건번호로 이어서 지원합니다.</p></div>
-      <div class="cycle-intro"><strong>한 번의 신고로, 회복 이후까지</strong><p>교사가 제도와 기관을 직접 찾아다니지 않도록 단계별 담당자가 정보를 공유하고, 필요한 지원을 다음 단계로 연결합니다.</p></div>
-      <div class="cycle-tabs" role="tablist" aria-label="교육활동 보호 5단계">
-        <button class="active" role="tab" aria-selected="true" data-cycle="prevention"><b>0</b><span>사전예방</span><small>위험징후 조기 발견</small></button>
-        <button role="tab" aria-selected="false" data-cycle="incident"><b>1</b><span>사안발생</span><small>신고·안전 확보</small></button>
-        <button role="tab" aria-selected="false" data-cycle="support"><b>2</b><span>통합지원</span><small>법률·심리·행정</small></button>
-        <button role="tab" aria-selected="false" data-cycle="return"><b>3</b><span>학교복귀</span><small>준비·적응·안정화</small></button>
-        <button role="tab" aria-selected="false" data-cycle="recurrence"><b>4</b><span>재발방지</span><small>평가·관리·강화</small></button>
-      </div>
-      <div class="cycle-detail" id="cycle-detail" aria-live="polite"></div>
-    </div></section>
-
-    <section class="severity-section" id="severity"><div class="wrap">
-      <div class="section-title"><div><span>SEVERITY LEVEL</span><h2>피해 정도에 따른 3단계 대응</h2></div><p>심각도와 긴급성에 따라 개입 주체와 지원 수준을 다르게 적용합니다.</p></div>
-      <div class="severity-guide"><strong>어떤 단계인지 판단하기 어렵다면?</strong><span>피해교원의 진술과 안전 상태를 우선 확인하고, 애매한 경우 더 높은 단계의 보호조치를 먼저 검토합니다.</span></div>
-      <div class="level-tabs" role="tablist" aria-label="교육활동 침해 피해등급">
-        <button class="active level-one" role="tab" aria-selected="true" data-level="1"><span>1단계</span><strong>초기 침해·위험 징후</strong><small>관찰과 기록 중심</small></button>
-        <button class="level-two" role="tab" aria-selected="false" data-level="2"><span>2단계</span><strong>명백한 침해 의심</strong><small>학교 공식 대응</small></button>
-        <button class="level-three" role="tab" aria-selected="false" data-level="3"><span>3단계</span><strong>중대·긴급 침해</strong><small>즉시 안전 확보</small></button>
-      </div>
-      <div class="level-detail" id="level-detail" aria-live="polite"></div>
-    </div></section>
-
-    <section class="process-section" id="process"><div class="wrap"><div class="section-title"><div><span>RESPONSE PROCESS</span><h2>교육활동 침해 사안처리 절차</h2></div><p>학교와 교육지원청이 함께 대응하는 기본 흐름입니다.</p></div><ol class="process-list"><li><b>1</b><div><strong>사안 발생·신고</strong><span>관리자 보고 및 사실 기록</span></div></li><li><b>2</b><div><strong>피해교원 보호</strong><span>분리·휴가·상담 등 긴급조치</span></div></li><li><b>3</b><div><strong>사안 조사</strong><span>교육지원청 조사 및 의견 제출</span></div></li><li><b>4</b><div><strong>지역교권보호위원회</strong><span>침해 여부 심의·조치 결정</span></div></li><li><b>5</b><div><strong>회복·복귀 지원</strong><span>치료·법률·학교 복귀 지원</span></div></li></ol><div class="process-note"><strong>알아두세요</strong><p>중대한 사안은 절차 진행과 별개로 피해교원의 안전 확보와 침해행위자 분리를 우선합니다. 구체적인 처리 방식은 관할 교육청 지침에 따라 달라질 수 있습니다.</p><button type="button" data-dialog="process">단계별 세부내용</button></div></div></section>
-    <section class="resources-section" id="resources"><div class="wrap"><div class="section-title"><div><span>GUIDE & FORMS</span><h2>자료·서식</h2></div><a class="section-more" href="#">전체 자료 보기 +</a></div><div class="resource-grid"><article><span class="file-type">안내서</span><h3>교육활동 침해행위 예방 및 대응 안내</h3><p>학교 현장에서 확인해야 할 사안처리 기준과 피해교원 보호조치를 정리했습니다.</p><button type="button" data-download="교육활동 침해 대응 안내서">PDF 내려받기</button></article><article><span class="file-type green">서식</span><h3>교육활동 침해 사안 신고서</h3><p>사안의 일시, 장소, 주요 내용과 요청사항을 기록하는 기본 양식입니다.</p><button type="button" data-download="교육활동 침해 사안 신고서">한글 서식 내려받기</button></article><article><span class="file-type orange">체크리스트</span><h3>피해교원 보호조치 확인표</h3><p>상담, 특별휴가, 법률지원, 치료비 등 이용 가능한 지원을 확인하세요.</p><button type="button" data-download="피해교원 보호조치 확인표">PDF 내려받기</button></article></div></div></section>
-    <section class="contact-section" id="contact"><div class="wrap contact-grid"><div><span class="light-kicker">REGIONAL SUPPORT</span><h2>가까운 지원기관을 확인하세요</h2><p>학교 소재 지역을 선택하면 관할 교육청의 교육활동보호센터 안내를 확인할 수 있습니다.</p></div><form class="region-form" id="region-form"><label for="region">지역 선택</label><div><select id="region"><option value="">시·도교육청 선택</option><option>서울특별시교육청</option><option>부산광역시교육청</option><option>대구광역시교육청</option><option>인천광역시교육청</option><option>광주광역시교육청</option><option>대전광역시교육청</option><option>울산광역시교육청</option><option>세종특별자치시교육청</option><option>경기도교육청</option><option>강원특별자치도교육청</option><option>충청북도교육청</option><option>충청남도교육청</option><option>전북특별자치도교육청</option><option>전라남도교육청</option><option>경상북도교육청</option><option>경상남도교육청</option><option>제주특별자치도교육청</option></select><button type="submit">확인</button></div><p id="region-result" aria-live="polite"></p></form></div></section>
-  </main>
-  <footer class="site-footer"><div class="wrap footer-grid"><div class="footer-logo"><strong>교원안심지원</strong><span>교육활동 보호 통합안내</span></div><div><p><a href="#">개인정보처리방침</a><a href="#">이용안내</a><a href="#contact">담당기관 안내</a></p><small>본 사이트는 교육활동 보호 정책 제안을 위한 시안이며, 실제 민원 접수 기능을 제공하지 않습니다.</small></div></div></footer>
-  <dialog id="info-dialog"><div class="dialog-inner"><button class="dialog-close" type="button" aria-label="닫기">×</button><div id="dialog-content"></div></div></dialog><div class="toast" id="toast" role="status" aria-live="polite"></div><script src="app.js"></script>
-</body></html>
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+  <aside class="sidebar" id="sidebar" aria-label="주요 메뉴">
+    <a class="brand" href="#home" aria-label="T-Care 홈"><span class="brand-symbol" aria-hidden="true">TC</span><span><strong>T-<span>Care</span></strong><small>Teacher Care · 교원 통합지원</small></span></a>
+    <div class="nav-caption">SUPPORT INDEX <span>01—05</span></div><nav id="primary-nav"></nav>
+    <div class="sidebar-bottom"><div class="sidebar-note"><span class="status-dot"></span> 언제든 다시 연결되는 지원<p>하나의 사건번호로<br>회복 이후까지 함께합니다.</p></div><a href="#policy" class="proposal-label">교육정책 5팀 · 정책 제안</a></div>
+  </aside>
+  <button class="nav-scrim" id="nav-scrim" aria-label="메뉴 닫기" hidden></button>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="breadcrumb"><button class="icon-button mobile-menu" id="menu-toggle" aria-controls="sidebar" aria-expanded="false" aria-label="메뉴 열기">☰</button><span class="breadcrumb-root">교원 통합지원</span><span class="breadcrumb-divider">/</span><strong id="page-label">지원 홈</strong></div>
+      <div class="topbar-actions"><button class="search-trigger" data-action="search" aria-label="지원 및 자료 검색"><span data-icon="search"></span><span>지원·자료 검색</span><kbd>/</kbd></button><button class="text-size" id="text-size" aria-pressed="false" aria-label="글자 크기 확대">가<span>+</span></button><span class="preview-badge">정책 체험판</span></div>
+    </header>
+    <main id="main" tabindex="-1"></main>
+    <footer class="footer"><span><strong>T-Care</strong> 교육네트워크 학술교류회 · 교육정책 5팀</span><button data-action="about">이용안내</button><p>정책 제안 체험 화면입니다. 실제 신고·상담 접수는 이루어지지 않으며, 입력 내용은 새로고침하면 초기화됩니다.</p></footer>
+  </div>
+  <dialog id="modal" aria-labelledby="modal-title"><div class="modal-header"><span class="eyebrow" id="modal-eyebrow">T-Care 안내</span><button class="icon-button" data-action="close-modal" aria-label="창 닫기">×</button></div><div id="modal-body"></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><div class="noscript">정책 체험 기능을 이용하려면 JavaScript를 켜 주세요. 교권침해 상담은 소속 시·도교육청 지역번호 + 1395, 긴급 신고는 112로 연결할 수 있습니다.</div></noscript>
+</body>
+</html>
